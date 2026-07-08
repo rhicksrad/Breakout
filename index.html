@@ -1,118 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Super Dooper Mega Turbo Breakout — EXTREME</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <div id="app">
-      <canvas id="game-canvas" aria-label="Breakout game area" role="img"></canvas>
-
-      <div id="hud" class="hud glass">
-        <div class="hud-left">
-          <span>Score: <strong id="hud-score">0</strong></span>
-          <span>Best: <strong id="hud-best">0</strong></span>
-        </div>
-        <div class="hud-center">
-          <span>Level: <strong id="hud-level">1</strong></span>
-          <span>Multiplier: <strong id="hud-multiplier">1x</strong></span>
-          <span>Laser: <strong id="hud-laser">Off</strong></span>
-          <span>Bombs: <strong id="hud-bombs">0</strong></span>
-        </div>
-        <div class="hud-right">
-          <span>Lives: <strong id="hud-lives">3</strong></span>
-          <button id="btn-pause" class="btn small">Pause</button>
-        </div>
-      </div>
-
-      <div id="toast-container"></div>
-
-      <!-- Main Menu -->
-      <div id="menu-main" class="modal show">
-        <div class="modal-content glass">
-          <h1 class="brand-extreme">Super Dooper Mega Turbo Breakout</h1>
-          <p class="subtitle">Sponsored by Mountain Dew EXTREEEEME. Neon speed. Explosive power.</p>
-          <div class="menu-actions">
-            <button id="btn-play" class="btn primary">Play</button>
-            <button id="btn-settings" class="btn">Settings</button>
-            <button id="btn-achievements" class="btn">Achievements</button>
-          </div>
-          <div class="credits">
-            <span>Use mouse/touch to move. Press Space to launch. P to pause.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pause Menu -->
-      <div id="menu-pause" class="modal hidden">
-        <div class="modal-content glass">
-          <h2>Paused</h2>
-          <div class="menu-actions">
-            <button id="btn-resume" class="btn primary">Resume</button>
-            <button id="btn-restart" class="btn">Restart</button>
-            <button class="btn" data-open-settings>Settings</button>
-            <button id="btn-exit" class="btn">Main Menu</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Settings -->
-      <div id="menu-settings" class="modal hidden">
-        <div class="modal-content glass">
-          <h2>Settings</h2>
-          <div class="settings-grid">
-            <label class="switch">
-              <input id="toggle-sfx" type="checkbox" checked />
-              <span>Sound Effects</span>
-            </label>
-            <label class="switch">
-              <input id="toggle-music" type="checkbox" checked />
-              <span>Music</span>
-            </label>
-            <label class="switch">
-              <input id="toggle-particles" type="checkbox" checked />
-              <span>Particles</span>
-            </label>
-            <label>
-              <span>Theme</span>
-              <select id="select-theme">
-                <option value="neon">Neon</option>
-                <option value="sunset">Sunset</option>
-                <option value="ocean">Ocean</option>
-                <option value="midnight">Midnight</option>
-              </select>
-            </label>
-            <label>
-              <span>Sensitivity</span>
-              <input id="range-sensitivity" type="range" min="0.4" max="1.6" step="0.1" value="1" />
-            </label>
-          </div>
-          <div class="menu-actions">
-            <button class="btn" data-close-settings>Close</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Achievements -->
-      <div id="menu-achievements" class="modal hidden">
-        <div class="modal-content glass">
-          <h2>Achievements</h2>
-          <div id="achievements-list" class="achievements-list"></div>
-          <div class="menu-actions">
-            <button class="btn" data-close-achievements>Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Use bundled script so file:// works without CORS/server -->
-    <script src="./js/bundle.js"></script>
-  </body>
-  </html>
-
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#05070d" />
+  <title>Neon Breakout</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; background: #05070d; }
+    canvas { display: block; cursor: crosshair; touch-action: none; }
+  </style>
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <script src="./js/game.js"></script>
+</body>
+</html>
